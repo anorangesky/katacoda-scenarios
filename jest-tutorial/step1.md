@@ -1,4 +1,4 @@
-# Before we start
+# Before we start...
 
 ## Do I have to have some basic understanding of JavaScript to follow this tutorial?
 Yes. We expect you to also know hor the React and Redux framework works, but the tutorial is possible to follow even if you don't. 
