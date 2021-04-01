@@ -10,7 +10,7 @@ Learn how to set up a test-environment for React-Redux projects using Jest. Jest
 
 ## How do I know what to test?
 - “Whenever you write new functions - test it”
-- The most fundamental parts to cover in your code is:
+- The most fundamental parts to cover in your code are:
   - UI elements
   - The loading of all pages of the app
   - The different functions and modules(small as big) 
