@@ -1,14 +1,10 @@
 ## What will I learn after finishing this tutorial?
-- You will learn how to set up a test-environment for React-Redux projects using Jest. Jest is a testing library for JavaScript code. With it, you can create, run, and structure tests. It will be installed using npm. 
-- By following this tutorial you will learn how to write unit and integration tests and integrate them with a GitHub repository. As a bonus, you will get a better understanding of why it is important and relevant to have good test coverage.
+-  You will learn how to set up a test environment for React projects using the JavaScript testing framework “Jest”. With Jest, you will be able to create, run, and structure tests. 
+-  In this tutorial, you will be focusing on the Log-in flow of a react project. As a bonus, you will get a better understanding of why it is important and relevant to have good test coverage.
 
 ## Do I have to have some basic understanding of JavaScript to follow this tutorial?
 - Yes. 
-- We expect you to also know how the React and Redux frameworks work, but the tutorial is possible to follow even if you don't. 
-
-## What is "Jest"?
-- “Jest is a  testing library for JavaScript code. With it, you can create, run, and structure tests.”
-- “Aims to be zero config”, “snapshots”, “isolation of tests to maximize performance”, “entire toolkit in one place”, etc. 
+- We expect you to also know how the React framework work, but the tutorial is possible to follow even if you don't. 
 
 ## How do I know what to test?
 - “Whenever you write new functions - test it”
