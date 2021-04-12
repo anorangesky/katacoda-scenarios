@@ -1,10 +1,14 @@
 {
-  "title": "Learn to integrate Jest in your React-Redux projects",
-  "description": "Learn how to set up a test-environment for React-Redux projects using Jest.",
+  "title": "Learn to integrate Jest in your React projects",
+  "description": "This is a crash-course in Jest testing on React projects.",
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
     "steps": [
+      {
+        "title": "Step 0",
+        "text": "step0.md"
+      },
       {
         "title": "Step 1",
         "text": "step1.md"
