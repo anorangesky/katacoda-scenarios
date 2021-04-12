@@ -35,19 +35,20 @@ What would be a good name for your test?<<
 (*) “-3.0 plus 0.4 plus -0.1 is close to -2.7”
 () “adding positive and negative floating points works”
 
->>Q2: What is the correct flow for a general unit test? //Answer as the corresponding letter order, eg. "a, b, c, d" //<<
+>>Q2: What is the correct flow for a general unit test? (Answer as the corresponding letter order, eg. "a, b, c, d")<<
 === d, b, a, c
+
 - A. Define what to expect as the output
 - B. Set up the initial state
 - C. Evaluate the results
 - D. Select a UI critical function
 
 >>Q3: Which of the following defines a good test? (mark all that applies)<<
-[*]It is easy to read no matter technical background
-[]Each test has independent blobs of code instead of shared test utilities
-[*]Runs fast 
-[]Runs only in isolation
-[*]Test is clean 
+[*] It is easy to read no matter technical background
+[] Each test has independent blobs of code instead of shared test utilities
+[*] Runs fast 
+[] Runs only in isolation
+[*] Test is clean 
 
 
 
