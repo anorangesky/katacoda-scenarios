@@ -36,10 +36,10 @@ You have written a test for a function that takes three numbers and returns the 
 ( ) d, b, c, a
 ( ) b, a, d, c
 
-A: Define what to expect as the output
-B: Set up the initial state
-C: Evaluate the results
-D: Select a UI critical function
+- A: Define what to expect as the output
+- B: Set up the initial state
+- C: Evaluate the results
+- D: Select a UI critical function
 
 >>Q3: Which of the following defines a good test? <<
 [*] It is easy to read no matter technical background
