@@ -11,7 +11,7 @@ A meaningful test is one that generates results that is repeatable and unlikely 
 
 ## What are some test strategies?
 There are different types of automated tests to write. The three most common are shown in the testing pyramid. 
-![test pyramid](jest-tutorial/img/testPyramid.png)
+![test pyramid](https://github.com/anorangesky/katacoda-scenarios/blob/introduction/jest-tutorial/img/testPyramid.png)
 A Test Strategy is a plan for defining an approach to how, when, and by whom, these different tests should be implemented. There are multiple test strategies available that fit differently well to different projects. Like TDD, STEP, and CTP. What is typical for the majority of strategies is that the automated tests follow a structure of:
 1. Setup initial state
 2. Dispatch an action
