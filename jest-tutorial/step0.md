@@ -10,7 +10,7 @@ A meaningful test is one that generates results that is repeatable and unlikely 
 4. The test(s) catches bugs. (Bugs rarely appear in isolated components. You need to combine multiple tests to catch real-life issues. If you only have isolated unit tests it might seem like your code is working because all components work individually, but together they may crash)
 
 ## What are some test strategies?
-There are different types of automated tests to write. The three most common are shown in the testing pyramid. 
+There are different types of automated tests to write. The three most common are shown in the test pyramid below:
 ![test pyramid](./assets/testPyramid.png)
 A Test Strategy is a plan for defining an approach to how, when, and by whom, these different tests should be implemented. There are multiple test strategies available that fit differently well to different projects. Like TDD, STEP, and CTP. What is typical for the majority of strategies is that the automated tests follow a structure of:
 1. Setup initial state
