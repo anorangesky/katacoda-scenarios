@@ -3,7 +3,8 @@ Before we start with the real deal it is important to have some fundamental unde
 
 ## What is a meaningful test?
 A meaningful test is one that generates results that is repeatable and unlikely to be caused by chance. The test should work as documentation for your project. Reading your test will tell what is expected behavior and what is not. Reading your test will tell what the different features do and how they are expected to be used.
->> Four checks to know if your test is meaningful:
+
+Four checks to know if your test is meaningful:
 1. It runs fast. (If the test runs slow there is a greater risk that you won’t run them and then it is no need to write the test in the first place)
 2. The test is stable. (If the test is flaky will tend to not trust the tests)
 3. The test is easy to read. (If only you can understand what the test does, the risk is greater that no one else can fix it if it breaks and delete it instead)
