@@ -21,10 +21,10 @@ A Test Strategy is a plan for defining an approach to how, when, and by whom, th
 # Quiz
 You have written a test for a function that takes three numbers and returns the addition of them. Your want test that the function works for both floats and integers as well as positive and negative values.Your test looks like this: 
 ```
-    test('the name of your test', () => {
-        let result = addNumbers(-3, 0.4, -0.1);
-        expect(result).toBeCloseTo(-2.7);
-    })
+test('the name of your test', () => {
+    let result = addNumbers(-3.0, 0.4, -0.1);
+    expect(result).toBeCloseTo(-2.7);
+})
 ```
 >>Q1: What would be a good name for your test? <<
 ( )"test addition"
