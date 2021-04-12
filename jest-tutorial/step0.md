@@ -18,30 +18,30 @@ A Test Strategy is a plan for defining an approach to how, when, and by whom, th
 3. Expect data to change
 
 # Quiz
->>Q1: You have written a test for a function that takes three numbers and returns the addition of them. Your want test that the function works for both floats and integers as well as positive and negative values. What would be a good name for your test? <<
-( )"test addition"
-(*) “-3.0 plus 0.4 plus -0.1 is close to -2.7”
-( ) “adding positive and negative floating points works”
-
-> Your test looks like this: 
+You have written a test for a function that takes three numbers and returns the addition of them. Your want test that the function works for both floats and integers as well as positive and negative values.Your test looks like this: 
 ```
     test('the name of your test', () => {
         let result = addNumbers(-3, 0.4, -0.1);
         expect(result).toBeCloseTo(-2.7);
     })
 ```
+>>Q1: What would be a good name for your test? <<
+( )"test addition"
+(*) “-3.0 plus 0.4 plus -0.1 is close to -2.7”
+( ) “adding positive and negative floating points works”
 
->>Q2: What is the correct flow for a general unit test?<<
+
+>>Q2: What is the correct flow for a general unit test? <<
 (*) d, b, a, c
 ( ) d, b, c, a
 ( ) b, a, d, c
 
-> A: Define what to expect as the output
-> B: Set up the initial state
-> C: Evaluate the results
-> D: Select a UI critical function
+A: Define what to expect as the output
+B: Set up the initial state
+C: Evaluate the results
+D: Select a UI critical function
 
->>Q3: Which of the following defines a good test? (mark all that applies)<<
+>>Q3: Which of the following defines a good test? <<
 [*] It is easy to read no matter technical background
 [] Each test has independent blobs of code instead of shared test utilities
 [*] Runs fast 
