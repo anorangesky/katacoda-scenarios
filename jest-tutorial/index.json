@@ -78,10 +78,18 @@
     }
   },
   "environment": {
-        "uilayout": "editor-terminal"
+        "uilayout": "editor-terminal",
+        //if not specified 'uieditoroath' will default to the '/root' dir
+        "uieditorpath": "/root/user",
+        //enforced syntax highlighting
+        "uisettings": "javascript"
       
   },
   "backend": {
     "imageid": "ubuntu:2004"
-  }
+  },
+  //Files to be pre-opened (still needs to be created)
+  "files": [
+    "app.js", "index.js"
+]
 }
