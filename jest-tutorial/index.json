@@ -78,8 +78,8 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
-  },
+        "uilayout": "editor-terminal"
+   },
   "backend": {
     "imageid": "ubuntu:2004"
   }
