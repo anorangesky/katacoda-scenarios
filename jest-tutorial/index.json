@@ -4,6 +4,10 @@
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
+    "assests":{
+      "host01": [{"file": "test.js"}]
+              }
+            },
     "steps": [
       {
         "title": "Step 0",
