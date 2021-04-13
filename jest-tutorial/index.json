@@ -11,15 +11,7 @@
       },
       {
         "title": "Step 1",
-        "text": "step1.md",
-        "details": {
-            "assets": {
-                "host01": [
-                    {"file": "test.js"},
-                ]
-              }
-            },
-        
+        "text": "step1.md"
       },
       {
         "title": "Step 2",
