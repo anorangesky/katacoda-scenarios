@@ -10,7 +10,11 @@ We have created a dummy project that you will use throughout this tutorial. It i
 3. If the cloning was successful, you will see the file structure looking something like this: ![file structure](./assets/fileStructure.png)
 4. To be able to run the project we need to install npm and it’s necessary packages. `npm install`{{execute}}
 5. To see how the log-in flow like on your local host type `npm start`{{execute}} and the website will be hosted on the port 3000
-6. That’s how it looks like! 
+6. To open port 3000: ![open port](./assets/openPort.png)
+    1.  click on the + next to 'terminal. 
+    2. 'select port to view host 1'
+    3. Type 3000
+    4. Voilà!
 7. Now, lets explore the dummy project. 
 - App.js `app.js`{{open}}
 - Index.js `index.js`{{open}}
