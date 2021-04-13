@@ -88,8 +88,4 @@
   "backend": {
     "imageid": "ubuntu:2004"
   },
-  //Files to be pre-opened (still needs to be created)
-  "files": [
-    "app.js", "index.js"
-]
 }
