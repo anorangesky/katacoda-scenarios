@@ -14,8 +14,7 @@ We have created a dummy project that you will use throughout this tutorial. It i
 7. Now, lets explore the dummy project. 
 - App.js `app.js`{{open}}
 - Index.js `index.js`{{open}}
-- The files containing react components. 
-8. React components are testable with component test and this is where Jest comes in.  
+- #TODO Explain the files containing react components. React components are testable with component test and this is where Jest comes in.  
 
 Let's continue to deep into Jest testing framework 
  
