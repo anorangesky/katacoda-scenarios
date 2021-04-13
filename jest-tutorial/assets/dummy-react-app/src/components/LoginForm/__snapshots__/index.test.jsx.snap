@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component snapshot 1`] = `
+<form
+  class="login-form"
+  data-testid="login-form"
+>
+  <div
+    class="MuiFormControl-root MuiTextField-root login-field"
+    data-testid="login-email-field"
+  >
+    <label
+      class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+      data-shrink="false"
+    >
+      Email
+    </label>
+    <div
+      class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-formControl"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiFilledInput-input"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="MuiFormControl-root MuiTextField-root login-field"
+    data-testid="login-password-field"
+  >
+    <label
+      class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+      data-shrink="false"
+    >
+      Password
+    </label>
+    <div
+      class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-formControl"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiFilledInput-input"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+    data-testid="login-submit-button"
+    tabindex="0"
+    type="submit"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Submit
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+</form>
+`;
