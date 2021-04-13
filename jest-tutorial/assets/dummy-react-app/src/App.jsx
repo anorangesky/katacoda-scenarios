@@ -1,48 +1,45 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoginForm from "./components/LoginForm";
-
-const users = {
-  0: {
-    id: 0,
-    username: "adahen",
-    email: "adahen@kth.se",
-  },
-};
-
-const passwords = {
-  "adahen@kth.se": {
-    id: 0,
-    password: "admin",
-  },
-};
+import axios from "axios";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  const login = (email, password) => {
-    const errorMsg = "Invalid user credentials";
-    const res = passwords[email];
-    if (res?.password !== password) return errorMsg;
+  useEffect(async () => {
+    const response = await axios.get("localhost:5000/me");
+    if (response.status === 200) {
+      setUser(response.data);
+    }
+  }, []);
 
-    setIsLoggedIn(true);
-    setUser(users[res.id]);
+  const authenticate = async (email, password) => {
+    try {
+      const response = await axios.post("localhost:5000/authenticate", {
+        email,
+        password,
+      });
+      if (response.status === 200) {
+        setUser(response.data);
+      }
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        {!isLoggedIn ? (
+        {!user ? (
           <>
             <img src={logo} className="App-logo" alt="logo" />
-            <LoginForm loginCallback={login} />
+            <LoginForm loginCallback={authenticate} />
           </>
         ) : (
           <>
-            <div>hello {user.username}!</div>
+            <div data-testid="greeting">hello {user.username}!</div>
           </>
         )}
       </header>

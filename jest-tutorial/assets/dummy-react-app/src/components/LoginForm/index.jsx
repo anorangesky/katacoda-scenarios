@@ -10,7 +10,7 @@ const LoginForm = ({ loginCallback }) => {
   const [emailValidationError, setEmailValidationError] = useState(false);
   const [passwordValidationError, setPasswordValidationError] = useState(false);
   const [password, setPassword] = useState(false);
-  const [loginError, setLoginError] = useState(null);
+  const [loginError] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,10 +28,7 @@ const LoginForm = ({ loginCallback }) => {
       return;
     }
 
-    const err = await loginCallback(email, password);
-    if (err) {
-      setLoginError(err);
-    }
+    await loginCallback(email, password);
   };
 
   return (
