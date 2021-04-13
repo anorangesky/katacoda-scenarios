@@ -15,9 +15,18 @@ const LoginForm = ({ loginCallback }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!validateEmail(email, () => setEmailValidationError(true))) return;
-    if (!validatePassword(password, () => setPasswordValidationError(true)))
+    setEmailValidationError(false);
+    setPasswordValidationError(false);
+
+    if (!email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)) {
+      setEmailValidationError(true);
       return;
+    }
+
+    if (!password) {
+      setPasswordValidationError(true);
+      return;
+    }
 
     const err = await loginCallback(email, password);
     if (err) {
@@ -40,7 +49,10 @@ const LoginForm = ({ loginCallback }) => {
         className="login-field"
         data-testid="login-email-field"
         value={email}
-        onInput={(e) => setEmail(e.target.value)}
+        onInput={(e) => {
+          setEmail(e.target.value);
+          setEmailValidationError(false);
+        }}
       ></TextField>
       <TextField
         error={!!passwordValidationError}
@@ -51,7 +63,10 @@ const LoginForm = ({ loginCallback }) => {
         variant="filled"
         className="login-field"
         data-testid="login-password-field"
-        onInput={(e) => setPassword(e.target.value)}
+        onInput={(e) => {
+          setPassword(e.target.value);
+          setPasswordValidationError(false);
+        }}
       ></TextField>
       <Button
         type="submit"
@@ -64,18 +79,6 @@ const LoginForm = ({ loginCallback }) => {
       {!!loginError && <Alert severity="error">{loginError}</Alert>}
     </form>
   );
-};
-
-const validateEmail = (email, validationErrorCallback) => {
-  const match = email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/);
-  if (!match) validationErrorCallback();
-  return match ? true : false;
-};
-
-const validatePassword = (password, validationErrorCallback) => {
-  const match = !!password;
-  if (!match) validationErrorCallback();
-  return match ? true : false;
 };
 
 LoginForm.propTypes = {

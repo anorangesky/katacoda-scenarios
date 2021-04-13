@@ -21,7 +21,7 @@ describe("Login component", () => {
   });
 
   test("test empty login callback", () => {
-    const stub = jest.fn().mockResolvedValue(true);
+    const stub = jest.fn(() => Promise((resolve) => resolve()));
     render(<LoginForm loginCallback={stub} />);
 
     screen.getByTestId(/login-submit-button/i).click();
@@ -30,7 +30,7 @@ describe("Login component", () => {
   });
 
   test("test invalid email with password login callback", () => {
-    const stub = jest.fn().mockResolvedValue(true);
+    const stub = jest.fn(() => Promise((resolve) => resolve()));
     render(<LoginForm loginCallback={stub} />);
 
     const emailInput = screen
@@ -48,7 +48,7 @@ describe("Login component", () => {
   });
 
   test("test valid email with password login callback", () => {
-    const stub = jest.fn().mockResolvedValue(true);
+    const stub = jest.fn(() => Promise((resolve) => resolve()));
     render(<LoginForm loginCallback={stub} />);
 
     const emailInput = screen
@@ -66,7 +66,7 @@ describe("Login component", () => {
   });
 
   test("test valid email without password login callback", () => {
-    const stub = jest.fn().mockResolvedValue(true);
+    const stub = jest.fn(() => Promise((resolve) => resolve()));
     render(<LoginForm loginCallback={stub} />);
 
     const emailInput = screen
