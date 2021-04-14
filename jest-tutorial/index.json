@@ -6,7 +6,7 @@
   "details": {
     "assets": {
       "host01": [
-          {"file": "dummy-react-app/src", "target": "/root/yourProject"}
+          {"file": "dummy-react-app/src", "target": "/root/react-dummy"}
       ]
     },
     "steps": [
