@@ -9,7 +9,7 @@ We have created a dummy project that you will use throughout this tutorial. It i
 5. This may take a while... in the meantime, let's check out the file structure! Our dummy project looks currently like this:![file structure](./assets/fileStructure.png)
  1. App.jsx `/root/react-dummy/dummy-react-app/src/App.jsx`{{open}} Is the basic log in form.
  2. #TODO
-6. When the npm installation is done, let's see how it looks like in production! To see it on your localhost type `npm start`{{execute}} and the website will be hosted on port 3000.
+6. When the npm installation is done, let's see how it looks like in production! To see it on your localhost type `npm start`{{execute}} and the website will be hosted on port 3000. [Your localhost](https://[[HOST_SUBDOMAIN]]-3000.environments.katacoda.com/)
 7. To open port 3000 in Katacoda:![open port](./assets/openPort.png)
 1. Click on the “+” next to your terminal.
 2. Click on “select port to view host 1”
