@@ -13,8 +13,8 @@ We have created a dummy project that you will use throughout this tutorial. It i
 4. To be able to run the project we need to install npm and it’s necessary packages.`cd jest-tutorial-project/`{{execute}}
 `npm install`{{execute}}
 5. This may take a while.. in the meantime, let's check out the folder structure!
-   1. App.js `./src/app.js`{{open}}
-   2. Index.js `.src/index.js`{{open}}
+   1. App.jsx `jest-tutorial/assets/dummy-react-app/src/App.jsx`{{open}}
+   2. Index.js `jest-tutorial/assets/dummy-react-app/src/index.js`{{open}}
 6. When the installation is done, let's see how the login form looks like. To see it on your local host type `npm start`{{execute}} and the website will be hosted on the port 3000
 7. To open port 3000 in Katacoda: ![open port](./assets/openPort.png)
   1.  click on the + next to 'terminal.
