@@ -6,8 +6,7 @@
   "details": {
     "assets": {
       "host01": [
-          {"file": "jest-tutorial/assets/dummy-react-app/src/App.jsx", "target": "/home/yourName/dummy"},
-          {"file": "jest-tutorial/assets/dummy-react-app/src/index.js", "target": "/home/yourName/dummy", "chmod": "+x"}
+          {"file": "helloWorld.js", "target": "/home/yourName/dummy"}
       ]
     },
     "steps": [
