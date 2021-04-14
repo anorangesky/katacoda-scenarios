@@ -4,6 +4,12 @@
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
+    "assets": {
+      "host01": [
+          {"file": "jest-tutorial/assets/dummy-react-app/src/App.jsx", "target": "/home/yourName/dummy"},
+          {"file": "jest-tutorial/assets/dummy-react-app/src/index.js", "target": "/home/yourName/dummy", "chmod": "+x"}
+      ]
+    },
     "steps": [
       {
         "title": "Step 0",
@@ -54,7 +60,8 @@
     }
   },
   "environment": {
-        "uilayout": "editor-terminal"
+        "uilayout": "editor-terminal",
+        "uisettings": "javascript"
    },
   "backend": {
     "imageid": "ubuntu:2004"
