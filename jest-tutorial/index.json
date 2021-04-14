@@ -6,9 +6,7 @@
   "details": {
     "assets": {
       "host01": [
-          {"file": "helloWorld.js", "target": "/root/yourProject"},
           {"file": "dummy-react-app", "target": "/root/yourProject"}
-
       ]
     },
     "steps": [
@@ -67,5 +65,5 @@
   "backend": {
     "imageid": "ubuntu:2004"
   },
-  "files": [ "app.js", "index.js" ]
+  "files": [ "/root/yourProject/dummy-react-app/src/App.jsx", "index.js" ]
 }
