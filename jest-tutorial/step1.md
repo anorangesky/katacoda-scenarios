@@ -3,7 +3,8 @@ Well done - Let’s get started!
 We have created a dummy project that you will use throughout this tutorial. It is covering a basic log-in flow, and you will be responsible for writing tests for it. The first thing we need to do is install the necessary packages needed.
 1. By default you are in the ‘root’ directory. We have created a dummy project for you to work with in this tutorial. It is a react project describing a login flow. To redirect to the dummy project, type:
 `cd react-dummy/dummy-react-app/src/`{{execute}}
-4. To be able to run the project we need to install npm and it’s necessary packages.
+`ls`{{execute}}
+4. To be able to run the react project we need to install npm and it’s necessary packages.
 `npm install`{{execute}}
 5. This may take a while.. in the meantime, let's check out the file structure! Our dummy project looks currently like this: ![file structure](./assets/fileStructure.png)
   1. App.jsx `/root/react-dummy/dummy-react-app/src/App.jsx`{{open}} Is the basic log in form. 

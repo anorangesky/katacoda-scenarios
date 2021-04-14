@@ -6,7 +6,7 @@
   "details": {
     "assets": {
       "host01": [
-          {"file": "dummy-react-app/src", "target": "/root/react-dummy"}
+          {"file": "dummy-react-app/src", "target": "/root/katauser"}
       ]
     },
     "steps": [
@@ -60,7 +60,9 @@
   },
   "environment": {
         "uilayout": "editor-terminal",
-        "uisettings": "javascript"
+        "uisettings": "javascript",
+        "uieditorpath": "/root/katauser/dummy-react-app"
+
    },
   "backend": {
     "imageid": "ubuntu:2004"
