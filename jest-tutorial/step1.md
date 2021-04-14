@@ -7,7 +7,6 @@ We have created a dummy project that you will use throughout this tutorial. It i
 4. To be able to run the react project we need to install npm and its necessary packages.
 `npm install`{{execute}}
 5. This may take a while... in the meantime, let's check out the file structure! Our dummy project looks currently like this: ![file structure](./assets/fileStructure.png)
-  1. App.jsx `/root/react-dummy/dummy-react-app/src/App.jsx`{{open}} Is the basic log in form.
   2. #TODO
 6. When the npm installation is done, let's see how it looks like in production! To see it on your localhost type `npm start`{{execute}} and the website will be hosted on port 3000. [Your localhost](https://[[HOST_SUBDOMAIN]]-3000-simba08.environments.katacoda.com/)
 7. To open port 3000 in Katacoda:![open port](./assets/openPort.png)
