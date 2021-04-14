@@ -6,7 +6,9 @@
   "details": {
     "assets": {
       "host01": [
-          {"file": "helloWorld.js", "target": "/root/yourProject"}
+          {"file": "helloWorld.js", "target": "/root/yourProject"},
+          {"file": "dummy-react-app", "target": "/root/yourProject"}
+
       ]
     },
     "steps": [
