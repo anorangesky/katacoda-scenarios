@@ -6,7 +6,7 @@
   "details": {
     "assets": {
       "host01": [
-          {"file": "helloWorld.js", "target": "/home/yourName/dummy"}
+          {"file": "helloWorld.js", "target": "/root/"}
       ]
     },
     "steps": [
