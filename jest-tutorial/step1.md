@@ -10,7 +10,8 @@ We have created a dummy project that you will use throughout this tutorial. It i
 
 4. When the npm installation is done, let's see how it looks like in production! To see it on your localhost type `npm start`{{execute}} and the website will be hosted on port 3000. 
   - [Click here to open your localhost](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/)
-5. Now, let's explore the dummy project even more.
+5. Now, let's explore the dummy project!
+  1. The filestructure of the project currently looks like this: ![filestructure](./assets/fileStructure.png)
   1. Open file.js (# TODO create a js-file containing react components that are commented and well structured)
   2. Walk through the code to ensure you know what it does. How can this code be tested?
   3. Seriously - think about it for a while
