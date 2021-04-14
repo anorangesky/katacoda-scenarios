@@ -7,7 +7,7 @@ We have created a dummy project that you will use throughout this tutorial. It i
 `npm install`{{execute}}
 5. This may take a while.. in the meantime, let's check out the file structure! Our dummy project looks currently like this: ![file structure](./assets/fileStructure.png)
   1. App.jsx `/root/react-dummy/dummy-react-app/src/App.jsx`{{open}} Is the basic log in form. 
-  2. Index.js `/root/react-dummy/dummy-react-app/src/index.jsx`{{open}} Renders the react app
+  2. #TODO
 6. When the npm-installation is done, let's see how it looks like in production! To see it on your local host type `npm start`{{execute}} and the website will be hosted on the port 3000.
 7. To open port 3000 in Katacoda: ![open port](./assets/openPort.png)
  1. Click on the “+” next to your terminal.
@@ -15,10 +15,15 @@ We have created a dummy project that you will use throughout this tutorial. It i
  3. A new tab opens in your browser
  4. Type “3000” as the port number
  5. Click “Display Port” and - Voilà!
-8. Now, let's explore the dummy project even more.
-  1. #TODO Explain the files containing react components. React components are testable with component tests and this is where Jest comes in.  `ls`{{execute}}
-      - Talk about the different files
-Let's continue to dive deeper into Jest testing framework
+8. Now, let's explore the dummy project even more. 
+    1. Open file.js (# TODO crete a js-file containing react components that is commented and well structured)
+    2. Walk through the code to ensure you know what it does. How can this code be tested?
+    3. Seariously - think about it for a while
+    4. Are you thinking? Yes? Good! :)
+    5. Well, in the code you see some react components. React components are testable with component tests and this is where Jest comes in. 
+    6. Ikr! Jest?! Finally!! 
+
+Let's continue to dive deeper into Jest testing framework in the next step! 
 
 
 
