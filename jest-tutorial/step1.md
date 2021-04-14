@@ -6,16 +6,10 @@ We have created a dummy project that you will use throughout this tutorial. It i
 - `ls`{{execute}}
 4. To be able to run the react project we need to install npm and its necessary packages.
 - `npm install`{{execute}}
-5. This may take a while... in the meantime, let's check out the file structure of our dummy project ![file structure](./assets/fileStructure.png)
-  2. #TODO
+5. This may take a while... in the meantime, letäs all look at this easter egg. ![easteregg](./assets/easterEgg.png)
+
 6. When the npm installation is done, let's see how it looks like in production! To see it on your localhost type `npm start`{{execute}} and the website will be hosted on port 3000. 
 - [Your localhost](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/)
-8. To open port 3000 in Katacoda:![open port](./assets/openPort.png)
-  1. Click on the “+” next to your terminal.
-  2. Click on “select port to view host 1”
-  3. A new tab opens in your browser
-  4. Type “3000” as the port number
-  5. Click “Display Port” and - Voilà!
 9. Now, let's explore the dummy project even more.
   1. Open file.js (# TODO create a js-file containing react components that are commented and well structured)
   2. Walk through the code to ensure you know what it does. How can this code be tested?
