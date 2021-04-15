@@ -25,7 +25,7 @@ Jest is an open-source testing framework that is actively maintained by Facebook
 - It has an active community (you can easily get help when needed)
 
 ## Install Jest
-To install Jest type `npm install --save-dev jest`{{execute}} in the react project folder in the terminal. (if you still have your localhost running cose it with `^C`{{execute}} before)
+To install Jest type `npm install --save-dev jest`{{execute}} in the react project folder in the terminal. (if you still have your localhost running close it with `^C`{{execute}} before)
  
 Then add the following section to your `package.json`{{open}} file:
 
