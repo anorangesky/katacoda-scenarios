@@ -17,7 +17,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "#TODO-insert": "#TODO-insert",
     "eject": "react-scripts eject",
     "build:css": "postcss src/tailwind.css -o src/main.css",
     "watch:css": "postcss src/tailwind.css -o src/main.css"
@@ -45,5 +44,6 @@
     "axios-mock-adapter": "^1.19.0",
     "eslint": "^7.23.0",
     "eslint-plugin-react": "^7.23.1"
-  }
+  },
+  #TODO-insert
 }
