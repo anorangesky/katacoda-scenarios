@@ -2,7 +2,7 @@
 Before we start with the real deal it is important to have some fundamental understanding of tests in general. To be able to open up this Jest-crash course you must pass the quiz at the end of this page. Good luck, and happy learning! 
 
 ## What is a meaningful test?
-A meaningful test is one that generates results that is repeatable and unlikely to be caused by chance. The test should work as documentation for your project. Reading your test will tell what is expected behavior and what is not. Reading your test will tell what the different features do and how they are expected to be used.
+A meaningful test generates results that are repeatable and unlikely to be caused by chance. The test should work as documentation for your project. Reading your test will tell what is expected behavior and what is not.
 
 Four checks to know if your test is meaningful:
 1. It runs fast. (If the test runs slow there is a greater risk that you won’t run them and then it is no need to write the test in the first place)

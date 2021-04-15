@@ -6,7 +6,7 @@ We have created a dummy project that you will use throughout this tutorial. It i
  - `ls`{{execute}}
 2. To be able to run the react project we need to install npm and its necessary packages.
  - `npm install`{{execute}}
-3. This may take a while... in the meantime, let's all look at this easter egg. ![easteregg](./assets/easterEgg.png)
+3. This may take a while... in the meantime, take a look at this easter egg: ![easteregg](./assets/easterEgg.png)
  
 4. When the npm installation is done, let's see how it looks like in production! To see it on your localhost type `npm start`{{execute}} and the website will be hosted on port 3000.
  - [Click here to open your localhost](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/)
