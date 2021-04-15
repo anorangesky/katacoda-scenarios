@@ -1,8 +1,9 @@
 Ok, so now when you understand react components, the structure of our dummy project, and have installed npm - it is time to dive into Jest.
+
 ## But first - React Testing Library
-Projects that got created with `Create React App` have by default support for React Testing Library. It is a set of helpers that let you test React components similar to how one tests other JavaScript code, aka. without having to rely on their implementation details. Helpers such as:
-  - Finding form elements, links, and buttons from their text or label (or using the `data-testid` to find elements whose label or context doesn't make sense)
-The testing library builds on the DOM - nodes, which means that the tests run similarly to how the user would interact with the elements on the page. In this way, it encourages better testing practices as it allows your tests to give you more confidence that your application will work when a real user uses it.
+Projects that got created with `Create React App` have by default support for React Testing Library. It is a set of helpers that let you test React components similar to how one tests other JavaScript code, aka. without having to rely on their implementation details.
+
+The React testing library builds on DOM - nodes, which means that the tests run similarly to how the user would interact with the elements on the page. In this way, it encourages better testing practices as it allows your tests to give you more confidence that your application will work when a real user uses it.
 
 ## Arrange, Act, Assert
 Examples of helpers in the typical test flow:
@@ -12,6 +13,7 @@ Examples of helpers in the typical test flow:
       - `fireEvent.click(screen.getByText('Load Greeting'))`
   3. Assert: The `expect` helper evaluates the results from the act and what the expected behavior
       - `expect(screen.getByRole('button')).not.toHaveAttribute('disabled')`
+
 But with just a set of helpers, you don't get far. You still need a runner, and ideally a React assertion and mocking library. This is where Jest comes in handy.
 
 ## JavaScript testing framework
@@ -26,6 +28,7 @@ Jest is an open-source testing framework that is actively maintained by Facebook
 To install Jest type `npm install --save-dev jest`{{execute}} in the react project folder in the terminal. (if you still have your localhost running cose it with `^C`{{execute}} before)
  
 Then add the following section to your `package.json`{{open}} file:
+
 <pre class="file"  data-filename= "package.json" data-target="insert" data-marker="#TODO-insert">
       "scripts": {
            "test": "jest"
@@ -35,6 +38,7 @@ Then add the following section to your `package.json`{{open}} file:
  
 ## Give it a try
 Let's try Jest by writing that simple test we talked about in the introduction.
+
 1. Create a file called addNumbers.js and open it:
    - `touch addNumbers.js`{{execute}}
    -  `addNumbers.js`{{open}}
