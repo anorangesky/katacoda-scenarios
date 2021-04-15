@@ -21,6 +21,7 @@ Jest is an open-source testing framework that is actively maintained by Facebook
 - It allows creating Snapshot tests for components (more on this in the next step)
 - It runs test in parallel which makes it has a high speed of test execution
 - It has an active community (you can easily get help when needed)
+
 ## Install Jest
 To install Jest type `npm install --save-dev jest`{{execute}} in the react project folder in the terminal. (if you still have your localhost running cose it with `^C`{{execute}} before)
  
