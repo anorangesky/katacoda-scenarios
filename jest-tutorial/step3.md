@@ -5,16 +5,14 @@ Snapshot tests work a bit differently than classic assertion-based tests. Instea
 Since it is so fast and easy to use Snapshot tests, it is a great asset to use when monitoring changes in the UI and ensure that unwanted changes aren’t unwillingly introduced. The Snapshot file is effortless to update and Jest prints a diff each time a test doesn't pass which makes it great for testing UI components (and let's be honest, they tend to change in style a bit too often)
 
 ## The component to test
-In the src folder, we have created another folder for you that is called `components`. In it, there is a file called `loginForm.jsx`. 
-  - `cd kataUser/dummy-react-app/src/components/LoginForm/`{{execute}}
-  - `loginForm.jsx`{{open}}
+In the src folder, we have created another folder for you that is called `components`. `cd kataUser/dummy-react-app/src/components/`{{execute}} In it, there is a file called `loginForm.jsx`- Open it and look at the code. 
 
 The code renders the react components used to create the Login form and is called from `app.jsx`. If you want to view the login form again:
 `npm start`{{execute}}
 [Open your localhost](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/)
 
 ## Write the Snapshot test
-In the `component` folder create a file called `loginForm.test.jsx` `cd cd kataUser/dummy-react-app/src/components/`{{execute}} `touch loginForm.test.jsx`{{execute}} . In it, you currently see some imports. Snapshot tests use a `renderer` to generate a value for the react tree (instead of a UI component like a normal assertion-test would do), hence we need to install it:
+In the `component` folder there is a test file for the loginForm called `loginForm.test.jsx`. In the file, you currently see some imports. Snapshot tests use a `renderer` to generate a value for the react tree (instead of a UI component like a normal assertion-test would do), hence we need to install it:
 `npm install react-test-renderer`{{execute}}
 
 Let’s write our first snapshot test that checks that the login form renders correctly when the user is not logged in: 
@@ -29,7 +27,7 @@ it("loginform renders correctly when the user is not logged in", () => {
 </pre>
 
 ## Run the test
-To run the test type `npm test`{{execute}}. 
+To run the test type `npm test -- loginForm.test`{{execute}}. 
 Hopefully, everything went smooth and your console will say `PASS  src/components/loginForm.test.jsx  › 1 snapshot written. `
 
 Open the snapshot folder to look at your snapshot file: 

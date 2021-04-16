@@ -9,12 +9,12 @@ But with just a set of helpers, you don't get far. You still need a runner, and 
 
 ## JavaScript testing framework
 Jest is an open-source testing framework that is actively maintained by Facebook. It has gotten very popular in the React world just because Jest makes it very easy to test your code. Here six good reasons why:
-    1. It is easy to use since it is already included in the package when you create a new react project
-    2. It has its test runner and its assertion and mocking library (no need to install it additionally!)
-    3. It allows creating Snapshot tests for components (more on this in the next step)
-    4. It runs test in parallel which makes it has a high speed of test execution
-    5. It runs through node using a fake DOM implementation which makes test less flaky since you dont have to start up a browser to run them
-    6. It has an active community (you can easily get help when needed)
+1. It is easy to use since it is already included in the package when you create a new react project
+2. It has its test runner and its assertion and mocking library (no need to install it additionally!)
+3. It allows creating Snapshot tests for components (more on this in the next step)
+4. It runs test in parallel which makes it has a high speed of test execution
+5. It runs through node using a fake DOM implementation which makes test less flaky since you dont have to start up a browser to run them
+6. It has an active community (you can easily get help when needed)
 
 ## Install Jest
 To install Jest type `npm install --save-dev jest`{{execute}} in the react project folder in the terminal. (if you still have your localhost running close it with `^C`{{execute}} before)
@@ -31,20 +31,14 @@ Then add the following section to your `package.json`{{open}} file:
 ## Give it a try
 Let's try Jest by writing that simple test we talked about in the introduction.
 
-1. Create a file called addNumbers.js and open it:
-   - `touch addNumbers.js`{{execute}}
-   -  `addNumbers.js`{{open}}
-3. Write the function for addNumbers:
+1. Create a file called addNumbers.js and write the function:
    <pre class="file"  data-filename= "addNumbers.js" data-target="replace">
        function addNumbers(x, y, z){
            return (x + y + z);
        }
        module.exports = addNumbers;
    </pre>
-4. Create and open a file for the test called addNumbers.test.js:
-   - `touch addNumbers.test.js`{{execute}}
-   -  `addNumbers.test.js`{{open}}
-5. Open the test file and write the test in it:
+2. Create file for the test called addNumbers.test.js and write the test in it:
    <pre class="file"  data-filename= "addNumbers.test.js" data-target="replace">
        const addNumbers = require('./addNumbers');
  
@@ -53,7 +47,7 @@ Let's try Jest by writing that simple test we talked about in the introduction.
            expect(result).toBeCloseTo(-2.7);
        })
    </pre>
-6. Let's run the test by typing `npm test`{{execute}} in the terminal
+6. Let's run the test by typing `npm test -- addNumbers.test`{{execute}} in the terminal
 7. If everything went well, you just wrote your first Jest test! Woohoo!
  
 Next - Let's understand the fuss about Snapshot Tests
