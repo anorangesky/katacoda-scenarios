@@ -4,36 +4,18 @@ import App from "./App";
 import { render, screen, cleanup, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, test, expect, describe } from "@jest/globals";
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
-
-const mock = new MockAdapter(axios);
+import mockAxios from "axios";
 
 const authRequest = {
-  email: "adahen@kth.se",
-  password: "admin",
-};
-
-const authHeader = {
-  Authorization: "token",
+  email: "admin@domain.com",
+  password: "password",
 };
 
 const userResponse = {
   id: 0,
-  username: "adahen",
-  email: "adahen@kth.se",
+  username: "admin",
+  email: "admin@domain.com",
 };
-
-mock.onGet("localhost:5000/me", undefined, authHeader).reply(200, userResponse);
-mock.onGet("localhost:5000/me").reply(200, null);
-
-mock
-  .onPost("localhost:5000/authenticate", authRequest)
-  .reply(200, userResponse, authHeader);
-mock.onPost("localhost:5000/authenticate").reply(401, {
-  error: "AuthorizationError",
-  message: "Invalid login credentials",
-});
 
 describe("app", () => {
   afterEach(cleanup);
@@ -41,19 +23,32 @@ describe("app", () => {
   test("mock response", async () => {
     render(<App />);
 
+    mockAxios.post.mockImplementationOnce(() =>
+      Promise.resolve({
+        data: userResponse,
+      })
+    );
+
     const emailInput = screen
       .getByTestId(/login-email-field/i)
       .querySelector("input");
-    userEvent.type(emailInput, "adahen@kth.se");
+    userEvent.type(emailInput, authRequest.email);
     const passwordInput = screen
       .getByTestId(/login-password-field/i)
       .querySelector("input");
-    userEvent.type(passwordInput, "admin");
+    userEvent.type(passwordInput, authRequest.password);
 
     screen.getByTestId(/login-submit-button/i).click();
 
+    expect(mockAxios.post).toBeCalledWith(
+      "localhost:5000/authenticate",
+      authRequest
+    );
+
     await waitFor(async () =>
-      expect(screen.getByTestId("greeting").innerHTML).toBe("hello adahen!")
+      expect(screen.getByTestId("greeting").innerHTML).toBe(
+        `hello ${userResponse.username}!`
+      )
     );
   });
 });

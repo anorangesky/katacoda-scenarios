@@ -1,18 +1,11 @@
 import "./App.css";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import LoginForm from "./components/loginForm";
 import axios from "axios";
 
 const App = () => {
   const [user, setUser] = useState(null);
-
-  useEffect(async () => {
-    const response = await axios.get("localhost:5000/me");
-    if (response.status === 200) {
-      setUser(response.data);
-    }
-  }, []);
 
   const authenticate = async (email, password) => {
     try {
@@ -20,9 +13,7 @@ const App = () => {
         email,
         password,
       });
-      if (response.status === 200) {
-        setUser(response.data);
-      }
+      setUser(response.data);
     } catch (e) {
       console.error(e);
     }
