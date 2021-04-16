@@ -1,0 +1,22 @@
+.login-form {
+  display: flex;
+  position: fixed;
+  min-width: 25%;
+  min-height: 50%;
+  border: 2px solid black;  
+  border-radius: 15px;
+  padding: 25px;   
+  background-color: whitesmoke;   
+
+
+   flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: black;
+
+}

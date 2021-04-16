@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import LoginForm from "./components/LoginForm";
+import LoginForm from "./components/loginForm";
 import axios from "axios";
 
 const App = () => {
@@ -34,7 +33,6 @@ const App = () => {
       <header className="App-header">
         {!user ? (
           <>
-            <img src={logo} className="App-logo" alt="logo" />
             <LoginForm loginCallback={authenticate} />
           </>
         ) : (

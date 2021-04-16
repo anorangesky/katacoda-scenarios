@@ -2,7 +2,7 @@ import React from "react";
 
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import LoginForm from "./index";
+import LoginForm from "./loginForm";
 import { jest, afterEach, test, expect, describe } from "@jest/globals";
 
 describe("Login component", () => {

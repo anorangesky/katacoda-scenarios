@@ -5,6 +5,9 @@ exports[`Login component snapshot 1`] = `
   class="login-form"
   data-testid="login-form"
 >
+  <h1>
+     Login 
+  </h1>
   <div
     class="MuiFormControl-root MuiTextField-root login-field"
     data-testid="login-email-field"

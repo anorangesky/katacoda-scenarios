@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { TextField, Button } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 
-import "./style.css";
+import "../style.css";
 
 const LoginForm = ({ loginCallback }) => {
   const [email, setEmail] = useState("");
@@ -37,6 +37,7 @@ const LoginForm = ({ loginCallback }) => {
       className="login-form"
       data-testid="login-form"
     >
+      <h1> Login </h1>
       <TextField
         error={!!emailValidationError}
         helperText={!!emailValidationError && "Invalid email address"}

@@ -22,6 +22,7 @@ Jest is an open-source testing framework that is actively maintained by Facebook
 - It has its test runner and its assertion and mocking library (no need to install it additionally!)
 - It allows creating Snapshot tests for components (more on this in the next step)
 - It runs test in parallel which makes it has a high speed of test execution
+- It runs through node using a fake DOM implementation which makes test less flaky since you dont have to start up a browser to run them
 - It has an active community (you can easily get help when needed)
 
 ## Install Jest
