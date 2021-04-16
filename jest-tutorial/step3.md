@@ -15,7 +15,7 @@ The code renders the react components used to create the Login form and is calle
 In the `component` folder there is a test file for the loginForm called `loginForm.test.jsx`. In the file, you currently see some imports. Snapshot tests use a `renderer` to generate a value for the react tree (instead of a UI component like a normal assertion-test would do), hence we need to install it:
 `npm install react-test-renderer`{{execute}}
 
-Let’s write our first snapshot test that checks that the login form renders correctly when the user is not logged in: 
+Let’s write our first snapshot test that checks that the login form renders correctly when the user is not logged in. In `components/loginForm.test.jsx` type:
  
 <pre class="file"  data-filename= "loginForm.test.jsx" data-target="insert"  data-marker="#TODO-insert-1">
 it("loginform renders correctly when the user is not logged in", () => {
