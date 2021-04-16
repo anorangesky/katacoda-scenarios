@@ -5,7 +5,9 @@ Snapshot tests work a bit differently than classic assertion-based tests. Instea
 Since it is so fast and easy to use Snapshot tests, it is a great asset to use when monitoring changes in the UI and ensure that unwanted changes aren’t unwillingly introduced. The Snapshot file is effortless to update and Jest prints a diff each time a test doesn't pass which makes it great for testing UI components (and let's be honest, they tend to change in style a bit too often)
 
 ## The component to test
-In the src folder, we have created another folder for you that is called `components`. In it, there is a file called `loginForm.jsx`. `./root/kataUser/dummy-react-app/src/components/LoginForm/loginForm.jsx`{{open}}
+In the src folder, we have created another folder for you that is called `components`. In it, there is a file called `loginForm.jsx`. 
+  - `cd kataUser/dummy-react-app/src/components/LoginForm/`{{execute}}
+  - `loginForm.jsx`{{open}}
 
 The code renders the react components used to create the Login form and is called from `app.jsx`. If you want to view the login form again:
 `npm start`{{execute}}
@@ -30,7 +32,9 @@ it("loginform renders correctly when the user is not logged in", () => {
 To run the test type `npm test`{{execute}}. 
 Hopefully, everything went smooth and your console will say `PASS  src/components/loginForm.test.jsx  › 1 snapshot written. `
 
-Open the snapshot folder to look at your test: `./root/kataUser/dummy-react-app/src/components/__snapshots__/loginForm.test.jsx.snap`{{open}}
+Open the snapshot folder to look at your snapshot file: 
+  - `./__snapshots__/`{{execute}}
+  - `loginForm.test.jsx.snap`{{open}}
 
 As you can see the snap-file looks like the DOM tree of our login component. 
 
@@ -39,7 +43,7 @@ Now, let’s update the component and watch our snapshot test fail! There are tw
    - There is an unexpected change in the component that needs to be addressed (a bug!)
    - The snapshot file is outdated and needs to be updated
 
-In assets/dummy-react-app/src/components/loginForm.jsx `./root/kataUser/dummy-react-app/src/components/loginForm.jsx`{{open}} change the title of our Login form from `Login form` to just `Login`.
+In `components/loginForm.jsx` on row 40, change the title from `Login form` to just `Login`.
 
 Do a `npm test`{{execute}} again. Now our snapshot test will fail. As you can see Jest gives us a diff-log so we can tell exactly what difference between our code and the snap-test. ![diff log](./assets/diff.png)
 
