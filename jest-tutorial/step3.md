@@ -5,7 +5,7 @@ Snapshot tests work a bit differently than classic assertion-based tests. Instea
 Since it is so fast and easy to use Snapshot tests, it is a great asset to use when monitoring changes in the UI and ensure that unwanted changes aren’t unwillingly introduced. The Snapshot file is effortless to update and Jest prints a diff each time a test doesn't pass which makes it great for testing UI components (and let's be honest, they tend to change in style a bit too often)
 
 ## The component to test
-In the src folder, we have created another folder for you that is called `components`. `cd kataUser/dummy-react-app/src/components/`{{execute}} In it, there is a file called `loginForm.jsx`- Open it and look at the code. 
+In the src folder, we have created another folder for you that is called `components`. `cd ~/kataUser/dummy-react-app/src/components/`{{execute}} In it, there is a file called `loginForm.jsx`- Open it and look at the code. 
 
 The code renders the react components used to create the Login form and is called from `app.jsx`. If you want to view the login form again:
 `npm start`{{execute}}
