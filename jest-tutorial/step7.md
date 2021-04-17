@@ -1,4 +1,6 @@
-# Create stubs using `jest.fn()` 
+# Create callback functions with stubs 
+
+## Introducing `jest.fn()` 
 
 When you want to test things like a button's `onClick()` function, or when you want to make sure that a function is called when you submit a form, you can create what is called a "stub". A stub is a placeholder function that track if it has been invoked or not.
 
@@ -35,3 +37,32 @@ test("test empty login should not invoke callback", () => {
   expect(stub).not.toHaveBeenCalled();
 });
 ```
+
+Now it's time to create a test that actually will (or should) invoke the callback. You can examine the source code further in the assets folder, but the summary is that both the email field and the password field needs to be filled in for the callback to be executed. 
+
+We can create a new tests that tests this case:
+
+```javascript
+test("test email with password login callback", () => {
+  const stub = jest.fn(() => Promise((resolve) => resolve()));
+  render(<LoginForm loginCallback={stub} />);
+
+  const emailInput = screen
+    .getByTestId(/login-email-field/i)
+    .querySelector("input");
+  userEvent.type(emailInput, "Hello, World!");
+  const passwordInput = screen
+    .getByTestId(/login-password-field/i)
+    .querySelector("input");
+  userEvent.type(passwordInput, "password");
+
+  screen.getByTestId(/login-submit-button/i).click();
+
+  expect(stub).toHaveBeenCalled();
+});
+```
+
+>>If you look at this test critically, you might notice that `Hello, World!` is obviously not a valid email address, yet the callback is executed and the test passes. Why is that? <<
+(*) "The login component does not validate email addresses"
+( ) "The test have not implemented email validation"
+( ) "The test invokes the callback directly instead of the component"
