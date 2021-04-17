@@ -50,14 +50,6 @@ We think the extra “form” in the title is unnecessary, so let’s update the
 
 You can also directly update your tests after updating your components by typing `jest --updateSnapshot`{{execute}} in the terminal. 
 
-## TODO:
-
-5. Hooks
-   - before / after
-   - setup/ cleanup
- 
-
-
 
 
 
