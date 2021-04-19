@@ -6,7 +6,7 @@ We can execute the test with `CI=true npm test -- --coverage`. What it means is:
 * `CI=true` disables "watch mode" which is good when running tests in a test-pipeline or when you only want to run the tests once. 
 * `--coverage` enables code coverage.
 
-We added the code-coverage into `package.json`, you you can run tests with coverage by running `npm run test:coverage`{{execute}}. Try running it now. 
+We added the code-coverage command into `package.json`, you you can run tests with coverage by running `npm run test:coverage`{{execute}}. Try running it now. 
 
 ![CodeCoverage](./assets/codeCoverage.png)
 
