@@ -29,7 +29,7 @@ Then add the following section to your `package.json`{{open}} file:
 ## Give it a try
 Let's try Jest by writing that simple test we talked about in the introduction.
  
-1. Create a file called addNumbers.js and write the function:
+1. Create a file called addNumbers.js in `src/` and write the function:
   <pre class="file"  data-filename= "addNumbers.js" data-target="replace">
       function addNumbers(x, y, z){
           return (x + y + z);
@@ -37,7 +37,7 @@ Let's try Jest by writing that simple test we talked about in the introduction.
       module.exports = addNumbers;
   </pre>
    It is necessary to export the function like `module.export` for us to be able to write tests for it. 
-2. Create file for the test called addNumbers.test.js and write the test in it:
+2. Create file for the test called addNumbers.test.js in `src/`and write the test in it:
   <pre class="file"  data-filename= "addNumbers.test.js" data-target="replace">
       const addNumbers = require('./addNumbers');
       test('-3.0 plus 0.4 plus -0.1 is close to -2.7', () => {
