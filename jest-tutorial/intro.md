@@ -12,4 +12,4 @@ In this tutorial, you will learn how to set up a test environment for React proj
  
 ## Do I have to have some basic understanding of JavaScript to follow this tutorial?
 - Yes.
-- We expect you to also know how the React framework work, but the tutorial is possible to follow even if you don't.
+- We expect you to also know how the React framework works, but the tutorial is possible to follow even if you don't.
