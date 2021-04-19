@@ -10,10 +10,10 @@ const authenticateAction = (user) => {
   };
 };
 
-export const authenticate = (payload) => {
+export const authenticate = (email, password) => {
   return (dispatch) => {
     axios
-      .post("localhost:5000/authenticate", payload)
+      .post("localhost:5000/authenticate", {email, password})
       .then((res) => {
         dispatch(authenticateAction(res.data));
       })

@@ -37,7 +37,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleAuthentication: (payload) => dispatch(authenticate(payload)),
+    handleAuthentication: (email, password) => dispatch(authenticate(email, password)),
   };
 };
 
