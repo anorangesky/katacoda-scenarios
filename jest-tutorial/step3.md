@@ -10,7 +10,7 @@ Since it is so fast and easy to use Snapshot tests, it is a great asset to use w
 
 In the src folder, we have created another folder for you that is called `components`. `cd ~/kataUser/dummy-react-app/src/components/`{{execute}} In it, there is a file called `loginForm.jsx`- Open it and look at the code. 
 
-The code renders the react components used to create the Login form and is called from `app.jsx`. If you want to view the login form again:
+The code renders the react components used to create the Login form and is called from `App.jsx`. If you want to view the login form again:
 
 `npm start`{{execute}}
 

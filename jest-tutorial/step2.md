@@ -51,7 +51,7 @@ test('-3.0 plus 0.4 plus -0.1 is close to -2.7', () => {
 })
 </pre>
 
-6. Let's run the test by typing `npm test`{{execute}} in the terminal
+6. Let's run the test by typing `npm test`{{execute}} in the terminal (press `q` to quit after).
 7. If everything went well, you just wrote your first Jest test! Woohoo!
 8. Check out this [Jest CheatSheet](https://devhints.io/jest) to get a quick overview of what more Jest can do for you.
 

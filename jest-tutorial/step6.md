@@ -11,13 +11,15 @@ Since we do not have a backend (and do not want to use the backend in our test a
 
 Using the `/__mocks__/` folder, jest will replace any imported node package in our code with the file in the folder with the same name. That means if we create the file `/__mocks__/axios.js` the App component will import our fake axios when inside a test, which can return a fake response from a mocked function. We can also spy on that function to see if it has been called and what it has been called with. 
 
+Open `src/__mocks__/axios.js` and add:
+
 <pre class="file" data-filename= "/kataUser/dummy-react-app/src/__mocks__/axios.js" data-target="replace">
 export default {
   post: jest.fn(() => Promise.resolve({ data: {} })),
 };
 </pre>
 
-now we create the test:
+now we create the test. Open `src/App.test.jsx` and add this test:
 
 <pre class="file" data-filename= "/root/kataUser/dummy-react-app/src/App.test.jsx" data-target="append">
 test("App login test", async () => {

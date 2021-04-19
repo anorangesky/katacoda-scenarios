@@ -1,14 +1,12 @@
 You're doing great! The last thing we will do in this tutorial is to learn a bit more about code coverage.
 # Code Coverage
-Code coverage is a measure of how much of your written code is covered by automated tests. The reason is to help to analyze the state, safe zones, and flaky areas, of your project code. To check the Code Coverage of our written Jest test so far, simply:
+Code coverage is a measure of how much of your written code is covered by automated tests. The reason is to help to analyze the state, safe zones, and flaky areas, of your project code. To check the Code Coverage of our written Jest test so far.
 
-1. add the `--coverage` flag to our test script in the `package.json` file:
-<pre class="file" data-filename="package.json" data-target="insert">
-    "scripts": {
-        "test": "jest --coverage"
-    }
-</pre>
-2. then execute `npm run test`{{execute}}. Now you will see the code coverage in the terminal.
+We can execute the test with `CI=true npm test -- --coverage`. What it means is:
+* `CI=true` disables "watch mode" which is good when running tests in a test-pipeline or when you only want to run the tests once. 
+* `--coverage` enables code coverage.
+
+We added the code-coverage into `package.json`, you you can run tests with coverage by running `npm run test:coverage`{{execute}}. Try running it now. 
 
 ![CodeCoverage](./assets/codeCoverage.png)
 

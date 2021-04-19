@@ -18,7 +18,7 @@ const LoginForm = ({ loginCallback }) => {
     setEmailValidationError(false);
     setPasswordValidationError(false);
 
-    if (!email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)) {
+    if (!email) {
       setEmailValidationError(true);
       return;
     }

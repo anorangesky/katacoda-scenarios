@@ -6,9 +6,9 @@ We can use something jest calls mocks to mimic the return values of external fun
 
 ## Introducing `jest.fn()` 
 
-You can create mock functions called "stubs" with `const stub = jest.fn()`. At any point in the test you can evaluate if this function has been invoked using `expect(stub).toHaveBeenCalled()`. We will create a stub and pass it into `<LoginField>`, in order to make sure that the login function is executed if our credentials passes all validation checks. 
+You can create mock functions called "stubs" with `const stub = jest.fn()`. At any point in the test you can evaluate if this function has been invoked using `expect(stub).toHaveBeenCalled()`. We will create a stub and pass it into `<LoginForm>`, in order to make sure that the login function is executed if our credentials passes all validation checks. 
 
-First, in our Login component test at `src/components/loginForm/index.test.jsx`, within the describe block, create a new test.
+First, in our Login component test at `src/components/loginForm.test.jsx`, within the describe block, create a new test.
 
 <pre class="file"  data-filename="/root/kataUser/dummy-react-app/src/components/loginForm.test.jsx" data-target="append">
 test("test empty login should not invoke callback", () => {

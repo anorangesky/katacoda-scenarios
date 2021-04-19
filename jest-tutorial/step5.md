@@ -47,9 +47,9 @@ test("test valid email with password login callback", () => {
 
 If you run the test suite, one test will now fail. But after the changes you can expect both these tests to pass if implemented correctly.
 
-Now we start adding an email validation feature in the component. Open `~/kataUser/dummy-react-app/src/components/loginForm.jsx`{{open}} and look at line 21: `if (!email)`. The current email validation behaviour amounts to "is the email string truthy (aka. not empty)". 
+Now we start adding an email validation feature in the component. Open `src/components/loginForm.jsx` and look at line 21: `if (!email)`. The current email validation behaviour amounts to "is the email string truthy (aka. not empty)". 
 
-To check if the string is an email address, we can add a simple regular expression. Change this if statement to: `if (!email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/))`.
+To check if the string is an email address, we can add a simple regular expression. Change this if-statement to: `if (!email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/))`.
 
 NOTE: There are dedicated libraries for matching email addresses which should be used in production environments in order to avoid edge-cases, but this works as a proof of concept.
 
