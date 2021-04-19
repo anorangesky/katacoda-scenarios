@@ -38,6 +38,7 @@ Let's try Jest by writing that simple test we talked about in the introduction.
        }
        module.exports = addNumbers;
    </pre>
+    It is nessesary to export the function like `module.export` for us to be able to write tests for it.  
 2. Create file for the test called addNumbers.test.js and write the test in it:
    <pre class="file"  data-filename= "addNumbers.test.js" data-target="replace">
        const addNumbers = require('./addNumbers');
@@ -49,6 +50,7 @@ Let's try Jest by writing that simple test we talked about in the introduction.
    </pre>
 6. Let's run the test by typing `npm test -- addNumbers.test`{{execute}} in the terminal
 7. If everything went well, you just wrote your first Jest test! Woohoo!
+8. Check out this [Jest CheatSheet](https://devhints.io/jest) to get a quick overview of what more Jest can do for you. 
  
 Next - Let's understand the fuss about Snapshot Tests
 

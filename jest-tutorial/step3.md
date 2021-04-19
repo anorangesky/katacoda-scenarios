@@ -1,56 +1,61 @@
-# Snapshot testing
-Snapshot tests work a bit differently than classic assertion-based tests. Instead of having us defining what the expected behavior of a test should be, Jest does it for us. Or kinda. The first time a Snapshot test runs, Jest stores the Dom-tree returning from the test in a file and uses it as the assertion value for future test's runs.
- 
-## When to use Snapshot tests
-Since it is so fast and easy to use Snapshot tests, it is a great asset to use when monitoring changes in the UI and ensure that unwanted changes aren’t unwillingly introduced. The Snapshot file is effortless to update and Jest prints a diff each time a test doesn't pass which makes it great for testing UI components (and let's be honest, they tend to change in style a bit too often)
+# Create mocked functions and spy on them 
 
-## The component to test
-In the src folder, we have created another folder for you that is called `components`. `cd ~/kataUser/dummy-react-app/src/components/`{{execute}} In it, there is a file called `loginForm.jsx`- Open it and look at the code. 
+There are situations where components (or code in general) is reliant on different code that is outside the components responsibility. Examples of this are when components call a backend server, uses a package or just is reliant on a piece of code from a different part of the application. Even if the component we want to test is reliant on another service or part of the codebase, we still want to test the component in isolation. How do we do that? 
 
-The code renders the react components used to create the Login form and is called from `app.jsx`. If you want to view the login form again:
-`npm start`{{execute}}
-[Open your localhost](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/)
+We can use something jest calls mocks to "mock" the behaviour of external functions, components or entire packages.
 
-## Write the Snapshot test
-In the `component` folder there is a test file for the loginForm called `loginForm.test.jsx`. In the file, you currently see some imports. Snapshot tests use a `renderer` to generate a value for the react tree (instead of a UI component like a normal assertion-test would do), hence we need to install it:
-`npm install react-test-renderer`{{execute}}
+## Introducing `jest.fn()` 
 
-Let’s write our first snapshot test that checks that the login form renders correctly when the user is not logged in. In `components/loginForm.test.jsx` type:
- 
-<pre class="file"  data-filename= "loginForm.test.jsx" data-target="insert"  data-marker="#TODO-insert-1">
-it("loginform renders correctly when the user is not logged in", () => {
-  const tree = renderer
-    .create(<LoginForm/>)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
- });
-</pre>
+You can create mock functions called "stubs" with `const stub = jest.fn()`. At any point in the test you can evaluate if this function has been invoked using `expect(stub).toHaveBeenCalled()`. We will create a stub and pass it into `<LoginField>`, in order to make sure that the login function is executed if our credentials passes all validation checks. 
 
-## Run the test
-To run the test type `npm test -- loginForm.test`{{execute}}. 
-Hopefully, everything went smooth and your console will say `PASS  src/components/loginForm.test.jsx  › 1 snapshot written. `
+First, in our Login component test at `src/components/LoginForm/index.test.jsx`, within the describe block, create a new test.
 
-Open the snapshot folder to look at your snapshot file: 
-  - `./__snapshots__/`{{execute}}
-  - `loginForm.test.jsx.snap`{{open}}
+```javascript
+test("test empty login should not invoke callback", () => {
+  const stub = jest.fn();
+  render(<LoginForm loginCallback={stub} />);
 
-As you can see the snap-file looks like the DOM tree of our login component. 
+});
+```
 
-## Update the component
-Now, let’s update the component and watch our snapshot test fail! There are two main reasons for a test to fail:
-   - There is an unexpected change in the component that needs to be addressed (a bug!)
-   - The snapshot file is outdated and needs to be updated
+The "callback" stub is our login function. That stub function is passed into the login component and is triggered when the login information is entered successfully and the form is submitted. That function should not be invoked if our login credentials are not entered into the email and password field before submitting. The final test will look like this:
 
-In `components/loginForm.jsx` on row 40, change the title from `Login form` to just `Login`.
+```javascript
+test("test empty login should not invoke callback", () => {
+  const stub = jest.fn();
+  render(<LoginForm loginCallback={stub} />);
 
-Do a `npm test`{{execute}} again. Now our snapshot test will fail. As you can see Jest gives us a diff-log so we can tell exactly what difference between our code and the snap-test. ![diff log](./assets/diff.png)
+  screen.getByTestId(/login-submit-button/i).click();
 
-## Update the test
-We think the extra “form” in the title is unnecessary, so let’s update the snapshot to match our current code instead. At the end of the terminal message, you see some ways to move forward. ![watch usage](./assets/diffUsage.png) As you can see, updating the snapshot test is as simple as `u`{{execute}}. And BOOOM - the test passed! 
+  expect(stub).not.toHaveBeenCalled();
+});
+```
 
-You can also directly update your tests after updating your components by typing `jest --updateSnapshot`{{execute}} in the terminal. 
+Now it's time to create a test that actually will (or should) invoke the callback. You can examine the source code further in the assets folder, but the summary is that both the email field and the password field needs to be filled in for the callback to be executed. 
 
+We can create a new tests that tests this case:
 
+```javascript
+test("test email with password login callback", () => {
+  const stub = jest.fn(() => Promise((resolve) => resolve()));
+  render(<LoginForm loginCallback={stub} />);
 
+  const emailInput = screen
+    .getByTestId(/login-email-field/i)
+    .querySelector("input");
+  userEvent.type(emailInput, "Hello, World!");
+  const passwordInput = screen
+    .getByTestId(/login-password-field/i)
+    .querySelector("input");
+  userEvent.type(passwordInput, "password");
 
+  screen.getByTestId(/login-submit-button/i).click();
 
+  expect(stub).toHaveBeenCalled();
+});
+```
+
+>>If you look at this test critically, you might notice that `Hello, World!` is obviously not a valid email address, yet the callback is executed and the test passes. Why is that? <<
+(*) "The login component does not validate email addresses yet, we have to implement it ourselves"
+( ) "We have encountered a bug with jest. We have to write a workaround"
+( ) "The test invokes the callback directly instead of the component (which we should not do)"
