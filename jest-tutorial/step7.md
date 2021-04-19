@@ -1,21 +1,14 @@
-# Create callback functions with stubs 
+# Create mocked functions and spy on them 
+
+There are situations where components (or code in general) is reliant on different code that is outside the components responsibility. Examples of this are when components call a backend server, uses a package or just is reliant on a piece of code from a different part of the application. Even if the component we want to test is reliant on another service or part of the codebase, we still want to test the component in isolation. How do we do that? 
+
+We can use something jest calls mocks to "mock" the behaviour of external functions, components or entire packages.
 
 ## Introducing `jest.fn()` 
 
-When you want to test things like a button's `onClick()` function, or when you want to make sure that a function is called when you submit a form, you can create what is called a "stub". A stub is a placeholder function that track if it has been invoked or not.
+You can create mock functions called "stubs" with `const stub = jest.fn()`. At any point in the test you can evaluate if this function has been invoked using `expect(stub).toHaveBeenCalled()`. We will create a stub and pass it into `<LoginField>`, in order to make sure that the login function is executed if our credentials passes all validation checks. 
 
-You can create stubs with `const stub = jest.fn()`. At any point in the test you can evaluate if this function has been invoked using `expect(stub).toHaveBeenCalled()`. We will create a stub and pass it into `<LoginField>`, in order to make sure that the login function is executed if our credentials passes all validation checks. 
-
-First, in our Login component test at `src/components/LoginForm/index.test.jsx`, within the describe block, create a new test like this:
-
-```javascript
-test("test empty login should not invoke callback", () => {
-  render(<LoginForm />);
-
-});
-```
-
-If we pass a mocked function into the component like this: `<LoginField loginCallback={stub}>`. The test will then look like this:
+First, in our Login component test at `src/components/LoginForm/index.test.jsx`, within the describe block, create a new test.
 
 ```javascript
 test("test empty login should not invoke callback", () => {
@@ -25,7 +18,7 @@ test("test empty login should not invoke callback", () => {
 });
 ```
 
-The "callback" stub is our login function. That function should not be invoked if our login credentials are not entered into the email and password field before submitting. The final test will look like this:
+The "callback" stub is our login function. That stub function is passed into the login component and is triggered when the login information is entered successfully and the form is submitted. That function should not be invoked if our login credentials are not entered into the email and password field before submitting. The final test will look like this:
 
 ```javascript
 test("test empty login should not invoke callback", () => {
@@ -63,6 +56,6 @@ test("test email with password login callback", () => {
 ```
 
 >>If you look at this test critically, you might notice that `Hello, World!` is obviously not a valid email address, yet the callback is executed and the test passes. Why is that? <<
-(*) "The login component does not validate email addresses"
-( ) "The test have not implemented email validation"
-( ) "The test invokes the callback directly instead of the component"
+(*) "The login component does not validate email addresses yet, we have to implement it ourselves"
+( ) "We have encountered a bug with jest. We have to write a workaround"
+( ) "The test invokes the callback directly instead of the component (which we should not do)"
