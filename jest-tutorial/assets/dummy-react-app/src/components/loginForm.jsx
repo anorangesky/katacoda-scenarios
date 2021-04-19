@@ -28,7 +28,7 @@ const LoginForm = ({ loginCallback }) => {
       return;
     }
 
-    await loginCallback(email, password);
+    await loginCallback({ email, password });
   };
 
   return (
