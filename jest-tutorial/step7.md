@@ -16,7 +16,7 @@ You will probably encounter a lot of discussions about "what is a good test cove
 
 # Using docker as a test-runner
 
-If you want to run the tests in a docker-container, you can do that just by going to the project root and typing `docker-compose run test`{{execute}}. If you are interested to see how it works, you can read:
+If you want to run the tests in a docker-container, you can do that just by going to the project folder and running `docker-compose run test`{{execute}}. If you are interested to see how it works, you can read:
 
 1. `docker-compose.yml`
 2. The `Dockerfile`
