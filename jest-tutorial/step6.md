@@ -1,15 +1,118 @@
-You're doing great! The last thing we will do in this tutorial is to learn a bit more about code coverage.
-# Code Coverage
-Code coverage is a measure of how much of your written code is covered by automated tests. The reason is to help to analyze the state, safe zones, and flaky areas, of your project code. To check the Code Coverage of our written Jest test so far, simply
-1. add the `--coverage` flag to our test script in the `package.json` file:
-   <pre class="file"  data-filename= "package.json" data-target="insert">
-       "scripts": {
-           "test": "jest --coverage"
-       }
-   </pre>
-2. then execute `npm run test`{{execute}}. Now you will see the code coverage in the terminal.
- 
-It may seem like the Wizard of Oz, but the code coverage flag just simply checks the percentage of statements of your code body that have been executed through the test run and how many statements have not.
- 
-And that's it! Now you can write Jest-test for your React projects.
-Happy hacking and remember to update your resume with your smoking hot new skill ;)
+# Integration test will full mocking
+
+The final test we write will test the full login path:
+
+1. Loading the App component, you will be greeted by the login screen. 
+2. Enter your information and submit. Send a login request to `localhost:5000/authenticate`.
+3. Check that the correct information was sent and save the response data as the current user.
+4. Check that you are now greeted by `hello [username]` instead of the login form. 
+
+Since we do not have a backend (and do not want to use the backend in our test anyway). We will create mock the response from the server. How do we do that when we do not have access to the underlying app code in our test? 
+
+Using the `/__mocks__/` folder, jest will replace any imported node package in our code with the file in the folder with the same name. That means if we create the file `/__mocks__/axios.js` the App component will import our fake axios when inside a test, which can return a fake response from a mocked function. We can also spy on that function to see if it has been called and what it has been called with. 
+
+```javascript
+// src/__mocks__/axios.js
+
+export default {
+  post: jest.fn(() => Promise.resolve({ data: {} })),
+};
+```
+
+```javascript
+const authRequest = {
+  email: "admin@domain.com",
+  password: "password",
+};
+
+const userResponse = {
+  id: 0,
+  username: "admin",
+  email: "admin@domain.com",
+};
+
+test("App login test", async () => {
+  render(<App />);
+
+  mockAxios.post.mockImplementationOnce(() =>
+    Promise.resolve({
+      data: userResponse,
+    })
+  );
+
+  const emailInput = screen
+    .getByTestId(/login-email-field/i)
+    .querySelector("input");
+  userEvent.type(emailInput, authRequest.email);
+  const passwordInput = screen
+    .getByTestId(/login-password-field/i)
+    .querySelector("input");
+  userEvent.type(passwordInput, authRequest.password);
+
+  screen.getByTestId(/login-submit-button/i).click();
+
+  // This will make sure that the information from the form is 
+  // sent by axios in the correct format
+  expect(mockAxios.post).toBeCalledWith(
+    "localhost:5000/authenticate",
+    authRequest
+  );
+```
+
+This is the finished test
+
+```javascript
+// src/App.test.js
+
+import React from "react";
+
+import App from "./App";
+import userEvent from "@testing-library/user-event";
+import { render, screen, waitFor } from "@testing-library/react";
+import { test, expect } from "@jest/globals";
+import mockAxios from "axios";
+
+const authRequest = {
+  email: "admin@domain.com",
+  password: "password",
+};
+
+const userResponse = {
+  id: 0,
+  username: "admin",
+  email: "admin@domain.com",
+};
+
+test("App login test", async () => {
+  render(<App />);
+
+  mockAxios.post.mockImplementationOnce(() =>
+    Promise.resolve({
+      data: userResponse,
+    })
+  );
+
+  const emailInput = screen
+    .getByTestId(/login-email-field/i)
+    .querySelector("input");
+  userEvent.type(emailInput, authRequest.email);
+  const passwordInput = screen
+    .getByTestId(/login-password-field/i)
+    .querySelector("input");
+  userEvent.type(passwordInput, authRequest.password);
+
+  screen.getByTestId(/login-submit-button/i).click();
+
+  expect(mockAxios.post).toBeCalledWith(
+    "localhost:5000/authenticate",
+    authRequest
+  );
+
+  await waitFor(async () =>
+    expect(screen.getByTestId("greeting").innerHTML).toBe(
+      `hello ${userResponse.username}!`
+    )
+  );
+});
+
+```
