@@ -1,30 +1,18 @@
 import "./App.css";
 
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import LoginForm from "./components/loginForm";
-import axios from "axios";
+import { connect } from "react-redux";
+import { authenticate } from "./redux/actions";
 
-const App = () => {
-  const [user, setUser] = useState(null);
-
-  const authenticate = async (email, password) => {
-    try {
-      const response = await axios.post("localhost:5000/authenticate", {
-        email,
-        password,
-      });
-      setUser(response.data);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
+const App = ({ user, handleAuthentication }) => {
   return (
     <div className="App">
       <header className="App-header">
         {!user ? (
           <>
-            <LoginForm loginCallback={authenticate} />
+            <LoginForm loginCallback={handleAuthentication} />
           </>
         ) : (
           <>
@@ -36,4 +24,23 @@ const App = () => {
   );
 };
 
-export default App;
+App.propTypes = {
+  user: PropTypes.object,
+  handleAuthentication: PropTypes.func,
+};
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.auth.user,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleAuthentication: (payload) => dispatch(authenticate(payload)),
+  };
+};
+
+const AppWithStore = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default AppWithStore;
