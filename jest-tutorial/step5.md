@@ -20,16 +20,15 @@ test("test invalid email with password login callback", () => {
 
   screen.getByTestId(/login-submit-button/i).click();
 
-  expect(stub).not.toHaveBeenCalled();
-});
+  expect(stub).not.toHaveBeenCalled();  // <-- This is the part that needs to be changed. Add .not.
 ```
 
 And add this test:
 
-```javascript
+<pre class="file"  data-filename="/root/kataUser/dummy-react-app/src/components/loginForm.test.jsx" data-target="append">
 test("test valid email with password login callback", () => {
   const stub = jest.fn(() => Promise((resolve) => resolve()));
-  render(<LoginForm loginCallback={stub} />);
+  render(&lt;LoginForm loginCallback={stub} /&gt;);
 
   const emailInput = screen
     .getByTestId(/login-email-field/i)
@@ -44,11 +43,11 @@ test("test valid email with password login callback", () => {
 
   expect(stub).toHaveBeenCalled();
 });
-```
+</pre>
 
 If you run the test suite, one test will now fail. But after the changes you can expect both these tests to pass if implemented correctly.
 
-Now we start adding an email validation feature in the component. Open `assets/dummy-react-app/src/components/LoginForm/index.jsx` and look at line 21: `if (!email)`. The current email validation behaviour amounts to "is the email string truthy (aka. not empty)". 
+Now we start adding an email validation feature in the component. Open `~/kataUser/dummy-react-app/src/components/loginForm.jsx`{{open}} and look at line 21: `if (!email)`. The current email validation behaviour amounts to "is the email string truthy (aka. not empty)". 
 
 To check if the string is an email address, we can add a simple regular expression. Change this if statement to: `if (!email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/))`.
 
