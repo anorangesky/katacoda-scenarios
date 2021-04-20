@@ -28,7 +28,7 @@ Jest is already included in `@testing-library` and pre-installed in all `create-
 
 ## Give it a try
 
-Let's try Jest by writing that simple test we talked about in the introduction. (If the dummy-react-app is still running from the terminal, typ `C`{{execute}} to close it before you proceed)
+Let's try Jest by writing that simple test we talked about in the introduction. (If the dummy-react-app is still running from the terminal do a `ctrl`+`c` to close it before you proceed)
  
 1. Create a file called `addNumbers.js` in `src/` and write the function below. Remember to export it, if you don't we can't write test for it. 
 
