@@ -67,3 +67,7 @@ test("App login test", async () => {
   );
 });
 </pre>
+
+If you run this test `npm test`{{execute}} the test will hopefully pass. We have now made sure that the component sends the input data correctly and changes correctly based on the response of our fake backend. Fantastic!
+
+Since we have our mocked axios that returns anything we want, the app will not have any `NOT FOUND` or `CORS` errors, even though we do not have a backend. Network calls to external resources and APIs are usually one of the slowest parts of an app, so this will keep our tests fast as well, which is a great bonus. 
