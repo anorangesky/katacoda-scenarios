@@ -4,7 +4,7 @@ Snapshot tests work a bit differently than classic assertion-based tests. Instea
  
 ## When to use Snapshot tests
 
-Since it is so fast and easy to use Snapshot tests, it is a great asset to use when monitoring changes in the UI and ensure that unwanted changes aren't unwillingly introduced. The Snapshot file is effortless to update and Jest prints a diff each time a test doesn't pass which makes it great for testing UI components (and let's be honest, they tend to change in style a bit too often)
+Since it is so fast and easy to use Snapshot tests, it is a great asset to use when monitoring changes in the UI and ensure that unwanted changes aren't unwillingly introduced. The Snapshot file is effortless to update and Jest prints a diff each time a test doesn't pass which makes it great for testing UI components since they tend to change in style more often
 
 ## The component to test
 
@@ -35,7 +35,7 @@ To run the test type `npm test`{{execute}}.
 
 Hopefully, everything went smooth and your console will say `PASS  src/components/loginForm.test.jsx`
 
-Open open `loginForm.test.jsx.snap` in `src/components/__snapshots__/`. As you can see the snap-file looks like the DOM tree of our login component. 
+Open `loginForm.test.jsx.snap` in `src/components/__snapshots__/`. As you can see the snap-file looks like the DOM tree of our login component. 
 
 ## Update the component
 

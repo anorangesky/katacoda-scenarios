@@ -28,9 +28,9 @@ Jest is already included in `@testing-library` and pre-installed in all `create-
 
 ## Give it a try
 
-Let's try Jest by writing that simple test we talked about in the introduction.
+Let's try Jest by writing that simple test we talked about in the introduction. (If the dummy-react-app is still running from the terminal, typ `C`{{execute}} to close it before you proceed)
  
-1. Create a file called addNumbers.js in `src/` and write the function below. Remember to export it, if you don't we can't write test for it. 
+1. Create a file called `addNumbers.js` in `src/` and write the function below. Remember to export it, if you don't we can't write test for it. 
 
     <pre class="file" data-filename="/root/kataUser/dummy-react-app/src/addNumbers.js" data-target="replace">
         export function addNumbers(x, y, z){
@@ -38,7 +38,7 @@ Let's try Jest by writing that simple test we talked about in the introduction.
         }
     </pre>
 
-2. Create file for the test called addNumbers.test.js in `src/`and write the test in it:
+2. Create file for the test called `addNumbers.test.js` in `src/`and write the test in it:
 
     <pre class="file" data-filename= "/root/kataUser/dummy-react-app/src/addNumbers.test.js" data-target="replace">
         import {addNumbers} from './addNumbers';
