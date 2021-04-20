@@ -30,30 +30,28 @@ Jest is already included in `@testing-library` and pre-installed in all `create-
 
 Let's try Jest by writing that simple test we talked about in the introduction.
  
-1. Create a file called addNumbers.js in `src/` and write the function:
+1. Create a file called addNumbers.js in `src/` and write the function below. Remember to export it, if you don't we can't write test for it. 
 
-<pre class="file" data-filename="/root/kataUser/dummy-react-app/src/addNumbers.js" data-target="replace">
-export function addNumbers(x, y, z){
-    return (x + y + z);
-}
-</pre>
-
-   It is necessary to export the function like `module.export` for us to be able to write tests for it. 
+    <pre class="file" data-filename="/root/kataUser/dummy-react-app/src/addNumbers.js" data-target="replace">
+        export function addNumbers(x, y, z){
+            return (x + y + z);
+        }
+    </pre>
 
 2. Create file for the test called addNumbers.test.js in `src/`and write the test in it:
 
-<pre class="file" data-filename= "/root/kataUser/dummy-react-app/src/addNumbers.test.js" data-target="replace">
-import {addNumbers} from './addNumbers';
+    <pre class="file" data-filename= "/root/kataUser/dummy-react-app/src/addNumbers.test.js" data-target="replace">
+        import {addNumbers} from './addNumbers';
 
-test('-3.0 plus 0.4 plus -0.1 is close to -2.7', () => {
-    let result = addNumbers(-3.0, 0.4, -0.1);
-    expect(result).toBeCloseTo(-2.7);
-})
-</pre>
+        test('-3.0 plus 0.4 plus -0.1 is close to -2.7', () => {
+            let result = addNumbers(-3.0, 0.4, -0.1);
+            expect(result).toBeCloseTo(-2.7);
+        })
+    </pre>
 
-6. Let's run the test by typing `npm test`{{execute}} in the terminal (press `q` to quit after).
-7. If everything went well, you just wrote your first Jest test! Woohoo!
-8. Check out this [Jest CheatSheet](https://devhints.io/jest) to get a quick overview of what more Jest can do for you.
+3. Let's run the test by typing `npm test`{{execute}} in the terminal (press `q` to quit after).
+4. If everything went well, you just wrote your first Jest test! Woohoo!
+5. Check out this [Jest CheatSheet](https://devhints.io/jest) to get a quick overview of what more Jest can do for you.
 
 Next - Let's understand the fuss about Snapshot Tests
 
