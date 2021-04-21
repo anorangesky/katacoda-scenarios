@@ -1,4 +1,4 @@
-Before we start with the real deal it is important to have some fundamental understanding of tests in general. To be able to open up this Jest-crash course you must pass the quiz at the end of this page. Good luck, and happy learning! 
+Before we start with the real deal it is important to have some fundamental understanding of tests in general. To open up this Jest-crash course you must pass the quiz at the end of this page. Good luck, and happy learning! 
 
 ## What is a meaningful test?
 
@@ -7,9 +7,11 @@ A meaningful test generates results that are repeatable and unlikely to be cause
 Four checks to know if your test is meaningful:
 
 1. It runs fast. (If the test runs slow there is a greater risk that you won’t run them and then it is no need to write the test in the first place)
-2. The test is stable. (If the test is flaky will tend to not trust the tests)
-3. The test is easy to read. (If only you can understand what the test does, the risk is greater that no one else can fix it if it breaks and delete it instead)
+2. The test is stable. (If the test is flaky* one will tend to not trust the tests)
+3. The test is easy to understand. (If only you can understand what the test does, the risk is greater that no one else can fix it if it breaks and delete it instead)
 4. The test(s) catches bugs. (Bugs rarely appear in isolated components. You need to combine multiple tests to catch real-life issues. If you only have isolated unit tests it might seem like your code is working because all components work individually, but together they may crash)
+
+*Flaky means that the test sometimes fails and sometimes passes. You can read more about it here: [Flaky tests](https://docs.gitlab.com/ee/development/testing_guide/flaky_tests.html)
 
 ## What are some test strategies?
 
@@ -17,7 +19,7 @@ There are different types of automated tests to write. The three most common are
 
 ![test pyramid](./assets/testPyramid.png)
 
-A Test Strategy is a plan for defining an approach to how, when, and by whom, these different tests should be implemented. There are multiple test strategies available that fit differently well to different projects. Like TDD, STEP, and CTP. What is typical for the majority of strategies is that the automated tests follow a structure of:
+A Test Strategy is a plan for defining an approach to how, when, and by whom, these different tests should be implemented. There are multiple test strategies available that fit differently well to different projects (one of them is `TDD` which we introduce in step 6). What is typical for the majority of strategies is that the automated tests follow a structure of:
 
 1. Setup initial state
 2. Dispatch an action
@@ -51,10 +53,10 @@ test('the name of your test', () => {
 - D: Select a UI critical function
 
 >>Q3: Which of the following defines a good test? <<
-[*] It is easy to read no matter technical background
-[] Each test has independent blobs of code instead of shared test utilities
+[*] It is easy to understand no matter technical background
+[ ] Each test has independent blobs of code instead of shared test utilities
 [*] Runs fast 
-[] Runs only in isolation
+[ ] Runs only in isolation
 [*] Test is clean 
 
 
