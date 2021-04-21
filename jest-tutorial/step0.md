@@ -1,5 +1,3 @@
-# Short on testing
-
 Before we start with the real deal it is important to have some fundamental understanding of tests in general. To be able to open up this Jest-crash course you must pass the quiz at the end of this page. Good luck, and happy learning! 
 
 ## What is a meaningful test?

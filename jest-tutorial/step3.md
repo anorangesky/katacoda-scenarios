@@ -1,5 +1,3 @@
-# Snapshot testing
-
 Snapshot tests work a bit differently than classic assertion-based tests. Instead of having us defining what the expected behavior of a test should be, Jest does it for us. Or kinda. The first time a Snapshot test runs, Jest stores the Dom-tree returning from the test in a file and uses it as the assertion value for future test's runs.
  
 ## When to use Snapshot tests

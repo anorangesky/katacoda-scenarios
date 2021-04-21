@@ -11,35 +11,35 @@
     },
     "steps": [
       {
-        "title": "Step 0",
+        "title": "Short on testing",
         "text": "step0.md"
       },
       {
-        "title": "Step 1",
+        "title": "Get up to speed",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Jest explained",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Snapshot testing",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Spies",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "TDD",
         "text": "step5.md"
       },
       {
-        "title": "Step 6",
+        "title": "Integration test",
         "text": "step6.md"
       },
       {
-        "title": "Step 7",
+        "title": "Code Coverage",
         "text": "step7.md"
       }
     ],

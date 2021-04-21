@@ -1,6 +1,6 @@
 Well done - Let's get started!
-# Setup
 
+# Setup
 We have created a dummy project that you will use throughout this tutorial. It is covering a basic log-in flow, and you will be responsible for writing tests for it. The first thing we need to do is install the necessary packages needed.
 
 1. By default you are in the 'root' directory. We have created a dummy project for you to work on within this tutorial. It is a react project describing a login flow. To redirect to the dummy project, type:
