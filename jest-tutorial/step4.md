@@ -8,10 +8,10 @@ We can use something jest calls mocks to mimic the return values of external fun
 
 You can create mock functions called "stubs" with `const stub = jest.fn()`. At any point in the test you can evaluate if this function has been invoked using `expect(stub).toHaveBeenCalled()`. We will create a stub and pass it into `<LoginForm>`, in order to make sure that the login function is executed if our credentials passes all validation checks. 
 
-First, in our Login component test at `src/components/loginForm.test.jsx`, within the describe block, create a new test.
+First, in our Login component test at `src/components/loginForm.test.jsx` within the describe block, create a new test that expect the login callback function to not be called when you click the submit button without entering your login credentials. 
 
 <pre class="file"  data-filename="/root/kataUser/dummy-react-app/src/components/loginForm.test.jsx" data-target="append">
-test("test empty login should not invoke callback", () => {
+test("submit without credentials should not invoke callback", () => {
   const stub = jest.fn();
   render(&lt;LoginForm loginCallback={stub} /&gt;);
 
@@ -28,7 +28,7 @@ Now it's time to create a test that actually will (or should) invoke the callbac
 We can create a new tests that tests this case:
 
 <pre class="file"  data-filename="/root/kataUser/dummy-react-app/src/components/loginForm.test.jsx" data-target="append">
-test("test invalid email with password login callback", () => {
+test("submit with invalid email credentials should invoke callback", () => {
   const stub = jest.fn(() => Promise((resolve) => resolve()));
   render(&lt;LoginForm loginCallback={stub} /&gt;);
 
