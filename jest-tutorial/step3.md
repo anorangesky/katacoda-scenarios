@@ -16,7 +16,7 @@ The code renders the react components used to create the Login form and is calle
 
 ## Write the Snapshot test
 
-In the `component` folder there is a test file for the loginForm called `loginForm.test.jsx`. In the file, you currently see some imports. Snapshot tests use a `renderer` to generate a value for the react tree (instead of a UI component like a normal assertion-test would do). 
+In the `components/` folder there is a test file for the loginForm called `loginForm.test.jsx`. In the file, you currently see some imports. Snapshot tests use a `renderer` to generate a value for the react tree (instead of a UI component like a normal assertion-test would do). 
 
 Let's write our first snapshot test that checks that the login form renders correctly when the user is not logged in. In `src/components/loginForm.test.jsx` type:
  
@@ -42,6 +42,8 @@ Now, let's update the component and watch our snapshot test fail! There are two 
    - The snapshot file is outdated and needs to be updated
 
 In `src/components/loginForm.jsx` on row 40, change the title from `Login form` to just `Login`.
+<pre class="file" data-filename="{/root/kataUser/dummy-react-app/src/components/loginForm.jsx}" data-target="insert" data-marker="Login form">Login</pre>
+
 
 Do a `npm test`{{execute}} again. Now our snapshot test will fail. As you can see Jest gives us a diff-log so we can tell exactly what difference between our code and the snap-test. ![diff log](./assets/diff.png)
 
