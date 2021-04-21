@@ -2,7 +2,7 @@ This is a crash course in Jest testing on React projects.
  
 ## What will I learn after finishing this tutorial?
 In this tutorial, you will learn how to set up a test environment for React projects using the JavaScript testing framework “Jest”. With Jest, you will be able to create, run, and structure tests.
--  You will be focusing on the Log-in flow of a react project where you will learn:
+You will be focusing on the Log-in flow of a react project where you will learn:
    - What makes a test meaningful
    - How to get up to speed with Jest
    - What Snapshot tests are and how to write them
@@ -12,4 +12,8 @@ In this tutorial, you will learn how to set up a test environment for React proj
  
 ## Do I have to have some basic understanding of JavaScript to follow this tutorial?
 - Yes.
-- We expect you to also know how the React framework works, but the tutorial is possible to follow even if you don't.
+- We also expect you to know how the React framework works, but the tutorial is possible to follow even if you don't.
+
+To catch up on your JavaScript and React skills consider these resources:
+- [Re-intro to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+- [Intro to React](https://reactjs.org/tutorial/tutorial.html)
