@@ -1,4 +1,4 @@
-# Integration test will full mocking
+# Integration test with full mocking
 
 The final test we write will test the full login path:
 
@@ -22,7 +22,7 @@ export default {
 now we create the test. Open `src/App.test.jsx` and add this test:
 
 <pre class="file" data-filename= "/root/kataUser/dummy-react-app/src/App.test.jsx" data-target="append">
-test("App login test", async () => {
+test("Login with valid credentials should show user landing page", async () => {
   const authRequest = {
     email: "admin@domain.com",
     password: "password",

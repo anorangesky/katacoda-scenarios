@@ -1,32 +1,21 @@
 # TDD - Test driven development
 
-Before we implement input validation for the email field in our code, we can first change our test to match how the component should function. 
+Before we implement input validation for the email field in our code, we can first change our test to match how the component should function. Firstly, change the name name of the test:
 
-Change the `test email with password login callback` test to:
+* from: `submit with invalid email credentials should invoke callback` 
+* to: `submit with invalid email credentials should not invoke callback`
 
-```javascript
-test("test invalid email with password login callback", () => {
-  const stub = jest.fn(() => Promise((resolve) => resolve()));
-  render(<LoginForm loginCallback={stub} />);
+Then, in the same test, change the expect method call:
 
-  const emailInput = screen
-    .getByTestId(/login-email-field/i)
-    .querySelector("input");
-  userEvent.type(emailInput, "Hello, World!");
-  const passwordInput = screen
-    .getByTestId(/login-password-field/i)
-    .querySelector("input");
-  userEvent.type(passwordInput, "password");
+* from: `expect(stub).toHaveBeenCalled()`
+* to: `expect(stub).not.toHaveBeenCalled()`
 
-  screen.getByTestId(/login-submit-button/i).click();
+if you think "Wait, this test will fail now", you are correct. Will will first change the way the test works before changing the component itself to match our test. 
 
-  expect(stub).not.toHaveBeenCalled();  // <-- This is the part that needs to be changed. Add .not.
-```
-
-And add this test:
+We will also add a test to match how the component should function with validation on a correct email address. Add this test to `src/components/loginForm.test.jsx`:
 
 <pre class="file"  data-filename="/root/kataUser/dummy-react-app/src/components/loginForm.test.jsx" data-target="append">
-test("test valid email with password login callback", () => {
+test("submit with valid credentials should invoke callback", () => {
   const stub = jest.fn(() => Promise((resolve) => resolve()));
   render(&lt;LoginForm loginCallback={stub} /&gt;);
 
@@ -54,3 +43,9 @@ To check if the string is an email address, we can add a simple regular expressi
 NOTE: There are dedicated libraries for matching email addresses which should be used in production environments in order to avoid edge-cases, but this works as a proof of concept.
 
 Now we should have basic email validation that works in most cases. Run test tests again. If implemented correctly then all tests should pass. 
+
+>>Why is test-driven development useful in a professional environment? <<
+( ) "You will write more testable code, which generally is a sign of code quality"
+( ) "It provides you with clear development goals, which keeps you focused on the task"
+( ) "It ensures there is always documentation of what the code does and if it works"
+(*) "All of the above"
