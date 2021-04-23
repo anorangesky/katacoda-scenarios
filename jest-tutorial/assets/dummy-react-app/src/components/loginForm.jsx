@@ -37,7 +37,7 @@ const LoginForm = ({ loginCallback }) => {
       className="login-form"
       data-testid="login-form"
     >
-      <h1> Login Form</h1>
+      <h1>#LoginForm</h1>
       <TextField
         error={!!emailValidationError}
         helperText={!!emailValidationError && "Invalid email address"}

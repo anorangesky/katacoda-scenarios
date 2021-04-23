@@ -41,7 +41,7 @@ Now, let's update the component and watch our snapshot test fail! There are two 
    - There is an unexpected change in the component that needs to be addressed (a bug!)
    - The snapshot file is outdated and needs to be updated
 
-In `src/components/loginForm.jsx` on row 40, change the title from `Login form` to just `Login`.
+In `src/components/loginForm.jsx` on row 40, change the title from `#LoginForm` to just `Login`.
 <pre class="file" data-filename="/root/kataUser/dummy-react-app/src/components/loginForm.jsx" data-target="insert" data-marker="#LoginForm">Login</pre>
 
 
